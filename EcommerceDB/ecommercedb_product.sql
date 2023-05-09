@@ -1,0 +1,61 @@
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+--
+-- Host: localhost    Database: ecommercedb
+-- ------------------------------------------------------
+-- Server version	8.0.30
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `product` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `image_url` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` double NOT NULL,
+  `category_id` int DEFAULT NULL,
+  `voucher_id` int DEFAULT NULL,
+  `discount_price` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK1mtsbur82frn64de7balymq9s` (`category_id`),
+  KEY `FKmsffcyk1pp7ish7051rlqxs3t` (`voucher_id`),
+  CONSTRAINT `FK1mtsbur82frn64de7balymq9s` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
+  CONSTRAINT `FKmsffcyk1pp7ish7051rlqxs3t` FOREIGN KEY (`voucher_id`) REFERENCES `voucher` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'A Classy and Elegant Design Citrine AA Anniversary Ring features round citrine gemstone is set in a prong setting.','http://victoria.shopaccino.com/uploads/victoria/products/r9-674672_l.jpg?param=1','Vintage Citrine AA Gemstone Ring, Unique Bridal Wedding Ring',42000,1,1,39980),(2,'An Utterly Beautiful and Classic Emerald Filigree Ring is crafted in 14K Gold.','http://victoria.shopaccino.com/uploads/victoria/products/r6-529287_l.jpg?param=1','Minimalist Beaded Two Tone Wedding Ring',42000,1,NULL,39980),(3,'An Utterly Beautiful and Classic Blue Sapphire Filigree Ring is crafted in 14K Gold.','http://victoria.shopaccino.com/uploads/victoria/products/r1-906010_m.jpg','Minimalist Beaded Two Tone Wedding Ring',52000,1,NULL,49982),(4,'This ring is made with love and made to make you look stunning and gorgeous','http://victoria.shopaccino.com/uploads/victoria/products/r21-890229_l.jpg','Antique Two Tone Gold Leaf Ring, Unique Bridesmaid Wedding',66000,1,NULL,64985),(5,'This ring is made with love and made to make you look stunning and gorgeous','http://victoria.shopaccino.com/uploads/victoria/products/12-918564_m.jpg','Unique Engagement Statement Women Ring',42000,1,NULL,39980),(6,'Imbue your style with these Pave Set Diamond Ring','http://victoria.shopaccino.com/uploads/victoria/products/19-945712_m.jpg','Antique Bridesmaid Wedding Ring',42000,1,NULL,39980),(8,'This Wedding Ring is a classic and gorgeous jewellery piece','http://victoria.shopaccino.com/uploads/victoria/products/24-514819_m.jpg','Women Statement Ring Band',42000,1,NULL,39980),(9,'Natural Blue Sapphire in 18Kt Gold (3.56 gms) with Diamonds (0.34 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/7-987504_m.jpg','Victoria Celebrity Blue Ring',66000,1,NULL,64985),(10,'Natural Blue Sapphire in 18Kt Gold (6.20 gms) with Diamonds (0.91 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/9-511016_m.jpg','Victoria Celebrity Ring',42000,1,NULL,39980),(11,'Natural Ruby In 18Kt Gold (4.44 gms) with Diamonds (0.28 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/28-961363_m.jpg','Victoria Forever Eternity Ring',52000,1,NULL,49982),(12,'Natural Ruby in 18Kt Gold (2.47 gms) with Diamonds (0.4 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/29-909005_m.jpg','Victoria Mystery Natural Ruby',52000,1,NULL,49982),(13,'Ruby Glass Filled Solitaire Earring is set with the gorgeous Solitaire Heart Shape Ruby Glass Filled.','http://victoria.shopaccino.com/uploads/victoria/products/22-909290_m.jpg','Heart Shape Gemstone Stud Earring, Statement Bridal Partywear Earring',62000,2,NULL,59985),(14,'Amethyst Solitaire Earrings are the perfect accessory for weddings and special occasions.','http://victoria.shopaccino.com/uploads/victoria/products/1-921186_m.jpg','Statement Gold Wedding Earring, Cushion Shape Birthstone Earring',62000,2,NULL,59985),(15,'Citrine Solitaire Stud Earrings are the perfect accessory for weddings and special occasions.','http://victoria.shopaccino.com/uploads/victoria/products/rr3-775339_m.jpg','Unique Wedding Statement Earring, Asscher Shape Gemstone Earring',62000,2,NULL,59985),(16,'Natural Blue Sapphire in 18Kt Gold (3.56 gms) with Diamonds (0.34 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/11-309566_m.jpg','Square Design Screw Back Earring',62000,2,NULL,59985),(17,'Natural Blue Sapphire in 18Kt Gold (3.56 gms) with Diamonds (0.34 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/1-423928_m.jpg','Bridal Statement Earring',62000,2,NULL,59985),(18,'Natural Blue Sapphire in 18Kt Gold (3.56 gms) with Diamonds (0.34 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/5-229494_m.jpg','Victoria Designer Collection Earring',62000,2,NULL,59985),(19,'Natural Blue Sapphire in 18Kt Gold (3.56 gms) with Diamonds (0.34 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/6-992526_m.jpg','Victoria Green Diamond Earring',62000,2,NULL,59985),(20,'Emerald in 18Kt Gold (10.80 gms) with Diamonds (0.83 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/10-327766_m.jpg','Victoria Vintage Classic Earring',62000,2,3,59985),(21,'Lab Created Emerald Gold Earrings are the perfect accessory for weddings and special occasions.','http://victoria.shopaccino.com/uploads/victoria/products/rr1-956346_m.jpg','Wedding Green Solitaire Earring, Asscher Shape Gemstone Earring',62000,2,NULL,59985),(22,'7.5 Inches Adjustable Bracelet with 2 Links','http://victoria.shopaccino.com/uploads/victoria/products/8-542300_m.jpg','Yellow Gold Heart Diamond Bracelet',21000,3,NULL,19999),(23,'7.5 Inches Adjustable Bracelet with 2 Links','http://victoria.shopaccino.com/uploads/victoria/products/7-249330_m.jpg','Yellow Gold Star Diamond Bracelet',21000,3,NULL,19999),(24,'7.5 Inches Adjustable Bracelet with 2 Links','http://victoria.shopaccino.com/uploads/victoria/products/6-439188_m.jpg','Yellow Gold Butterfly Diamond Bracelet',21000,3,NULL,19999),(25,'7.5 Inches Adjustable Bracelet with 2 Links','http://victoria.shopaccino.com/uploads/victoria/products/5-895633_m.jpg','Yellow Gold Diamond Snake Bracelet',21000,3,NULL,19999),(26,'If you are ready to express your true feelings to someone special, or there a special occasion coming up then Jewelry is the perfect choice for you.','http://victoria.shopaccino.com/uploads/victoria/products/4r-446545_m.jpg','Rose Gold 3.04 Cts Four Prong Diamond Tennis Bracelet',365000,3,NULL,349985),(27,'If you are ready to express your true feelings to someone special, or there a special occasion coming up then Jewelry is the perfect choice for you.','http://victoria.shopaccino.com/uploads/victoria/products/3e-206495_m.jpg','Yellow Gold 4.34 Cts Four Prong Diamond Tennis Bracelet',365000,3,NULL,349985),(28,'If you are ready to express your true feelings to someone special, or there a special occasion coming up then Jewelry is the perfect choice for you.','http://victoria.shopaccino.com/uploads/victoria/products/2-228406_m.jpg','White Gold 4.34 Cts Four Prong Diamond Tennis Bracelet',365000,3,NULL,349985),(29,'If you are ready to express your true feelings to someone special, or there a special occasion coming up then Jewelry is the perfect choice for you.','http://victoria.shopaccino.com/uploads/victoria/products/1e-337631_m.jpg','Yellow Gold 3.80 Cts Tiger Bracelet',365000,3,NULL,349985),(30,'Cloisonné in 18Kt Gold (14.04 gms) with Diamonds (0.90 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/3-104059_m.jpg','Victoria Cloisonné Collection Bracelet',55000,3,NULL,53985),(31,'Natural Ruby in 18Kt Gold (21.486 gms) with Diamonds (2.97 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/4-540430_m.jpg','Victoria Designer Red Bracelet',55000,3,NULL,53985),(32,'If you are ready to express your true feelings to someone special, or there a special occasion coming up then Jewelry is the perfect choice for you.','http://victoria.shopaccino.com/uploads/victoria/products/8t-421086_m.jpg','Circle Drop Halo Diamond Pendant, White Gold Blue Sapphire Necklace, Bridal Halo Necklace',175000,4,NULL,149985),(33,'Delicate and pretty Tourmaline Gemstone Pendant dangles in the gold chain','http://victoria.shopaccino.com/uploads/victoria/products/6t-796407_m.jpg','Petal Clover Flower Pendant, Bridal Wedding Necklace, Stack Drop Charm Necklace, Statement Necklace',175000,4,NULL,149985),(34,'Dainty Smoky Quartz Gemstone Necklace is embellished with the stunning Round Smoky Quartz as the petals with a small stone in the center forms a captivating Charm Drop Pendant with gold chain','http://victoria.shopaccino.com/uploads/victoria/products/5e-587120_m.jpg','Necklace, Four Leaf Flower Pendant, Stackable Charm Drop Pendant, Minimalist Everyday Necklace for Girls',175000,4,NULL,149985),(35,'This classic Diamond Flower Pendant is beautifully set with the sparkling Brilliant Round Diamond in the flower shape, this flower locket dangles from the long chain','http://victoria.shopaccino.com/uploads/victoria/products/4r-540463_m.jpg','Bridal Wedding Anniversary Charm Necklace, 14K Gold Layering Chain Pendant, Girls Casual Cluster Necklace',175000,4,NULL,149985),(37,'A Gorgeous Ornate Unique Ruby Charm Gold Bar Pendant Engraved Round Shape Ruby and Princess Cut Emerald is set in a channel setting on the bar pendant in an alternative pattern','http://victoria.shopaccino.com/uploads/victoria/products/3w-846803_m.jpg','Emerald Statement Necklace, Gemstone Gold Chain Pendant, Classic Women Necklace',175000,4,NULL,149985),(38,'Step in her life with this Art Deco Amethyst Necklace','http://victoria.shopaccino.com/uploads/victoria/products/2-222770_m.jpg','Art Deco Amethyst Necklace, Dainty 7 Stone Chain Pendant for Her, February Birthstone Bridal Necklace',175000,4,NULL,149985),(40,'An Exquisite and Classic Ruby Gold Charm Necklace embellished with Round Ruby is set in a beautiful flower pattern','http://victoria.shopaccino.com/uploads/victoria/products/1-632209_m.jpg','1 Ct Ruby Gold Charm Necklace, Flower Women Statement Pendant, Wedding Anniversary Chain Necklace',175000,4,NULL,149985),(41,'Mix Gemstones in 18Kt Gold (32.116 gms) with Diamonds (7.08 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/11-843242_m.jpg','Victoria Mystery Designer Necklace',175000,4,NULL,149985),(42,'Emerald in 18Kt Gold (33.998 gms) with Diamonds (13.55 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/2-860726_m.jpg','Vintage Classic Necklace',175000,4,NULL,149985),(43,'Diamond In 18Kt Gold (33.10 gms) with Diamonds (8.24 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/30-240444_m.jpg','Victoria Mystery Necklace 101',175000,4,NULL,149985),(44,'Emerald in 18Kt Gold (43.32 gms) with Diamonds (4.98 Cts)','http://victoria.shopaccino.com/uploads/victoria/products/8-277434_m.jpg','Victoria Celebrity Necklace',175000,4,NULL,149985);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-05-07 22:00:55
